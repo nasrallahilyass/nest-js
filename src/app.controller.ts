@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -15,9 +15,12 @@ export class AppController {
     return this.appService.getGoodbye();
   }
 
-  // path params
-  @Post('hello-user/:name/:age/:nationality')
-  PostHelloToUser(@Param('nationality') params): string {
-    return params;
+  @Post('hello')
+  // @Body() decorator is used to extract the body of the request
+  sayHelloToTheUser(@Body() body : any) : any {
+    return body
   }
 }
+
+
+
