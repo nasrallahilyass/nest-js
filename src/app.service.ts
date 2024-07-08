@@ -10,8 +10,8 @@ export class AppService {
     return 'Goodbye World!';
   }
 
-  sayHelloToTheUser(): string {
-    return 'Hello';
+  sayHelloToTheUser(name : string): string {
+    return `Hello ${name}!`;
   }
 }
 
