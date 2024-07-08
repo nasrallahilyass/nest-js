@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -15,9 +15,9 @@ export class AppController {
     return this.appService.getGoodbye();
   }
 
-  @Post('hello-user')
-  PostHelloToUser(@Query() query): string {
-    return query.name ? `Hello ${query.name}` : 'Hello';
-    // return this.appService.sayHelloToTheUser();
+  // path params
+  @Post('hello-user/:name/:age/:nationality')
+  PostHelloToUser(@Param('nationality') params): string {
+    return params;
   }
 }
