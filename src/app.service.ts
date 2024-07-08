@@ -9,4 +9,8 @@ export class AppService {
   getGoodbye(): string {
     return 'Goodbye World!';
   }
+
+  sayHelloToTheUser(): string {
+    return 'Hello';
+  }
 }
